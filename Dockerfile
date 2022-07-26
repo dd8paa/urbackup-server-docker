@@ -17,6 +17,7 @@ RUN case ${TARGETPLATFORM} in \
     esac \
         && apt-get update \
         && apt-get install -y wget \
+        && apt-get install -y python3 python3-pip \
         && wget -q "$URL" -O /root/urbackup-server.deb \
         && echo "urbackup-server urbackup/backuppath string /backups" | debconf-set-selections \
         && apt-get install -y --no-install-recommends /root/urbackup-server.deb btrfs-tools \
