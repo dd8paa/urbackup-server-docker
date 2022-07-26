@@ -22,6 +22,7 @@ RUN case ${TARGETPLATFORM} in \
         && echo "urbackup-server urbackup/backuppath string /backups" | debconf-set-selections \
         && apt-get install -y --no-install-recommends /root/urbackup-server.deb btrfs-tools \
         && rm /root/urbackup-server.deb \
+        && pip3 install urbackup-server-web-api-wrapper \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
 
